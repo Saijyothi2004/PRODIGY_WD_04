@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'poppins'sans-serif;
+}
+body{
+    color: #ededed;
+    background: #081b29;
+}
+.header{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding: 20px 10%;
+    background:#051129;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:100;
+}
+.logo{
+    position: relative;
+    font-size: 30px;
+    color:#fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor:default;
+    opacity:0;
+    animation: slideRight 5s ease forwards;
+}
+.navbar a{
+    display:inline-block;
+    font-size:25px;
+    color:#fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .1s;
+    opacity:0;
+    animation:slideTop 5s ease forwards;
+}
+.navbar a:hover{
+    color:#0ef;
+}
+.home{
+    position: relative;
+    width:100%;
+    justify-content: space-between;
+    height:100vh;
+    background: url(https://img.freepik.com/premium-photo/color-gradient-background-blur-glow-yellow-blue_279525-29150.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    align-items: center;
+    padding:70px 10%;
+}
+img{
+    border-radius: 50%;
+    position: center;
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    align-items: center;
+    padding:70px 10% 0;
+    height:80vh;
+    width:80vh;
+}
+.home-content{
+    max-width:600px
+}
+.home-content h3{
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 5s ease forwards;
+    animation-delay: .5s;
+}
+.home-content h1{
+    font-size:50px;
+    font-weight:700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+.home-scl a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width:40px;
+    height:40px;
+    background: transparent;
+    border:2px solid #0ef;
+    border-radius:50%;
+    font-size:20px;
+    color:#0ef;
+    text-decoration: none;
+    transition: .3s ease;
+    opacity: 0;
+    animation: slideLeft 5s ease forwards;
+    margin:30px 15px 30px 0;
+}
+.home-scl a:hover{
+    background: #0ef;
+    color:#081b29;
+    box-shadow:0 0 20px #0ef;
+}
+.btn-box{
+    display:inline-block;
+    padding:12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 10px;
+    color:#081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.btn-box:hover {
+    box-shadow:0 0 5px cyan,
+    0 0 25px cyan,0 0 50px cyan,
+    0 0 100px cyan,0 0 200px cyan;
+}
+    
+.about{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap:1.5rem;
+}
+.about-img img{
+    width:100vh;
+    max-width:600px;
+    height:100vh;
+    border-radius: 50%;
+    padding-bottom: 20%;
+}
+    .about-text h2{
+        font-size:90px;
+        
+    }
+    .about-text h2 span{
+        color:#0ef;
+    }
+    .about-text h4{
+        font-size:29px;
+        font-weight:600;
+        color:lightcoral;
+        line-height:1.7;
+        margin:15px 0 30px;
+    }
+    .about-text p{
+        color:aliceblue;
+        font-size: 20px;
+        line-height: 1.4;
+        margin-bottom: 4rem;
+
+    }
+.container1 h2{
+    display:flex;
+    justify-content: center;
+    font-size:40px;
+}
+.container1 h2 span{
+    color:#0ef
+}
+.container{
+    width:600px;
+    height:500px;
+    margin-left: 120px;
+}
+    
+.heading1{
+    text-align:center;
+    text-decoration: underline;
+    text-underline-offset:10px;
+    text-decoration-thickness: 4px;
+    margin-bottom: 50px;
+    padding: 75px 90px;
+}
+.container1{
+    width:600px;
+    height:500px;
+    padding:95px 90px;
+    margin-left: 120px;
+}
+.bar{
+    font-size:23px;
+}
+.Technical-bars.bar{
+    margin-top: 40px 0;
+}
+.Technical-bars.bar:first-child{
+    margin-top: 0;
+}
+.Technical-bars.bar:last-child{
+    margin-bottom: 0;
+}
+.Technical-bars.bar.info{
+    margin-bottom:5px;
+    animation:animate 1s cubic-bezier(1,0,0.5,1)forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+.progres-line{
+    position:relative;
+    border-radius: 10px;
+    width:150%;
+    height:7px;
+    background-color:#000000;
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+
+}
+@keyframes animate{
+        100%{
+            transform: scaleX(1);
+        }
+}
+.progres-line span{
+    height: 100%;
+    background-color: #0ef;
+    position: absolute;
+    border-radius: 60px;
+    animation:animate  1s cubic cubic-bezier(1,0,0.5,1)forwards;
+    transform: scaleX(0);
+    transform-origin:left;
+}
+.progres-line.python span{
+    width:85%;
+       
+}
+.progres-line.java span{
+    width:80%;
+        
+}
+.progres-line.html span{
+    width:90%;
+}
+.progres-line.css span{
+     width:90%;
+}
+.progres-line.js span{
+    width:80%;
+}
+
+.progres-line span::before{
+    position: absolute;
+    width:0;
+    height:0;
+    border: 7px solid transparent;
+    border-bottom-width:0px;
+    border-right-width: 0px;
+    border-top-color:#000;
+    top:-10px;
+    right:0;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity:0;
+}
+@keyframes showText{
+    100%{
+        opacity: 1;
+    }
+}
+.timeline-section h2{
+    margin-bottom: 100px;
+    margin-top: 100px;
+    font-size: 60px;
+    color:aqua;
+    padding-left: 450px;
+}
+.timeline-items{
+    margin: auto;
+    transition: all .3s cubic-bezier(.499,.0.5,.55,.95);
+    will-change:filter;
+    margin-top: -15%;
+    
+}
+.timeline-item{
+    background-color: #2f363e;
+    margin-bottom: 40px;
+    width:100%;
+    border-radius:10px;
+    padding:10px;
+}
+.timeline-item1{
+    background-color: #2f363e;
+    margin-bottom: 40px;
+    width:100%;
+    margin-left: 600px;
+    border-radius:10px;
+    padding:10px;
+}
+.timeline-item2{
+    background-color: #2f363e;
+    margin-bottom: 40px;
+    width:100%;
+    border-radius:10px;
+    padding:10px;
+}
+.timeline-item:hover{
+    background-color: #147bbc;
+}
+.timeline-item1:hover{
+    background-color:lightblue;
+    color: #000;
+}
+.timeline-item2:hover{
+    background-color:aliceblue;
+    color: #000;
+}
+.timeline-content{
+    padding: 10px;
+}
+.timeline-items:hover{
+    filter:brightness(100%) hue-rotate(50deg);
+    transform:scale(1.04);
+    cursor: pointer;
+}
+
+.contact-icons a{
+    color:white
+}
+.contact{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    gap:2rem;
+    padding-left:-10px;
+    margin-top:130px;
+}
+.contact h2{
+    padding-left:400px;
+    font-size:60px;
+    line-height: 1;
+    margin-bottom: 100px;
+}
+.contact-text h4{
+    color:rgb(228,228,228);
+    font-size: 50px;
+    font-weight:600;
+}
+.contact-text p{
+    color:rgb(177,177,177);
+    font-size: 27px;
+    line-height: 30px;
+    margin-bottom: 10rem;
+}
+.contact-list{
+    margin-bottom: 3rem;
+}
+.contact-list li{
+    margin-bottom: 10px;
+    display:block;
+}
+.contact-list i{
+    display:inline-block;
+    color:#0ef;
+    font-size: 25px;
+    font-weight: 600;
+    transition: all .40s ease;
+}
+.contact-list li a:hover{
+    transform: scale(1.01) translateY(-5px);
+    color:#0ef;
+}
+.contact-icons i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    font-size:20px;
+    border-radius: 50%;
+    font-size: 25px;
+    color:#0ef;
+    margin:10px;
+    transition: .5s ease;
+    opacity: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s *var(--i));
+}
+
+.contact-icons i:hover{
+    background: #0ef;
+    color:#000;
+    box-shadow: 0 0 20px;
+}
+input,form textarea{
+    padding: 20px;
+    width:550%;
+}
+.contact-form form input,form textarea{
+    border: none;
+    outline: none;
+    padding: 18px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+}
+.contact-form textarea{
+    resize: none;
+    height: 220px;
+
+}
+.contact-form form.btn-box{
+    display:inline-block;
+    padding:14px 60px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 20px;
+    color:#081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity:0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef,0 0 25px #0ef;
+
+}
+.contact-form form .btn-box:hover{
+    box-shadow:0 0 5px cyan,
+    0 0 25px cyan,0 0 50px cyan,
+    0 0 100px cyan,0 0 200px cyan;
+}
+
+
+@keyframes slideRight {
+        0% {
+            transform: translateX(-100px);
+            opacity:0;
+        }
+        100%{
+            transform: translateX(0px);
+            opacity:1;
+        }
+}
+@keyframes slideLeft {
+        0% {
+            transform: translateY(-100px);
+            opacity:0;
+        }
+        100%{
+            transform: translateY(0px);
+            opacity:1;
+        }
+}
+    
+@keyframes slideTop {
+        0% {
+            transform: translateY(-100px);
+            opacity:0;
+        }
+        100%{
+            transform: translateY(0px);
+            opacity:1;
+        }
+}
+@keyframes slideBottom{
+        0% {
+            transform: translateX(-100px);
+            opacity:0;
+        }
+        100%{
+            transform: translateX(0px);
+            opacity:1;
+        }
+        
+}
+    
+    
+       
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Portfolio</a>
+        <nav class="navbar">
+            
+            <a href="#about">About</a>
+            <a href="#skills">Skill</a>
+            <a href="#Education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+   
+    <section class ="home" id="home">
+        <div class ="home-content">
+            <h3>Hello,It's Me</h3><br>
+             <h2>Sai Jyothi Talakondapati</h2>
+             <div class="home-scl">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+
+             </div><br>
+             <a href="#"  class="btn-box">More about Me</a>
+        </div>
+        <div class="img">
+            <img src ="https://img.freepik.com/premium-photo/vector-illustration-trendy-style-multitasking-concept-woman-sits-his-laptop_881299-32888.jpg?w=1380">
+          </div>  
+    </section>
+    <section class="about" id="about">
+        <div class="about-img">
+        <img src="https://img.freepik.com/premium-photo/vector-illustration-trendy-style-multitasking-concept-woman-sits-his-laptop_881299-32877.jpg?w=1380">
+        </div>
+        <div class="about-text">
+        <h2>About<span>Me</span></h2>
+        <h4>Web developer</h4>
+        <p> I am pursuing b.tech 3rd year 2nd sem.I am very enthusiastic ,punctual & career minded ,capable of solving comprehensive problems , talkative and having good communication skills and i am very quick learner, to learn new skills.I did some projects based on web development.My passion lies in creating cwebsite designs and implementing them through frontend development.so eagerly waiting for the new projects to develop my skills and improve my career. When starting a new project,I thoroughly research and analyze the target audience and the clients specific requirements.I try to reach the expectations of the clients.</p>
+        <a href="#"  class="btn-box">More about Me</a>
+        </div>
+     </div>
+</section>
+        <div class="container1" id="skills">
+            <h2>My<span>Skills</span></h2>
+            <h1 class="heading1">Technical Skills</h1>
+            <div class="Technical-bars">
+             <div class="bar"><i style="color:#c32ec9"class="fa-brands fa-python"></i>
+                <div class="info">
+                    <span style="font-size:17px;font-weight: 500; animation: showText 0.5s 1s linear forwards;opacity: 0;">PYTHON</span>
+                    <span style="font-size:17px;font-weight: 500; animation: showText 0.5s 1s linear forwards;opacity:0 ; padding-left:510px;">85%</span>
+
+                </div>
+                <div class="progres-line python">
+                    <span></span>
+                </div>
+              </div><br>
+              <div class="bar"><i class="fa-brands fa-java"></i>
+                <div class="info">
+                    <span style="font-size:17px;font-weight: 500; animation: showText 0.5s 1s linear forwards;opacity: 0;">JAVA</span>
+                    <span style="font-size:17px;font-weight: 500; animation: showText 0.5s 1s linear forwards;opacity:0 ; padding-left:490px;">80%</span>
+                </div>
+                <div class="progres-line java">
+                    <span></span>
+                </div><br>
+                
+                    <div class="bar"><i style="color:#c95d2e" class="fa-brands fa-html5"></i>
+                        <div class="info">
+                            <span style="font-size:17px;font-weight: 500; animation: showText 0.5s 1s linear forwards;opacity: 0;">HTML</span>
+                            <span style="font-size:17px;font-weight: 500; animation: showText 0.5s 1s linear forwards;opacity:0 ; padding-left:550px;">90%</span>
+                        </div>
+                        <div class="progres-line html">
+                            <span></span>
+                        </div><br>
+                        <div class="bar"><i style="color:#147bbc" class="fa-brands fa-css3"></i>
+                            <div class="info">
+                                <span style="font-size:17px;font-weight: 500; animation: showText 0.5s 1s linear forwards;opacity: 0;padding-top:20px">CSS</span>
+                                <span style="font-size:17px;font-weight: 500; animation: showText 0.5s 1s linear forwards;opacity: 0;padding-left: 550px;">90%</span>
+                            </div>
+                            <div class="progres-line css">
+                                <span></span>
+                            </div><br>
+                            <div class="bar"><i style="color:#b0bc1e" class="fa-brands fa-js"></i>
+                                <div class="info">
+                                    <span style="font-size:17px;font-weight: 500; animation: showText 0.5s 1s linear forwards;opacity: 0; ">JAVA SCRIPT</span>
+                                    <span style="font-size:17px;font-weight: 500; animation: showText 0.5s 1s linear forwards;opacity:0 ; padding-left:490px;">80%</span>
+                                </div>
+                                <div class="progres-line js">
+                                    <span></span>
+                                </div>
+                        </div>
+                     </div>
+            </div>
+<section class="timeline-section" id="Education">
+    <h2>Education</h2>
+    <div class="timeline-items">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2018-2019</div>
+            <div class="timeline-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, magni neque? Eaque ratione doloremque nesciunt fugiat nemo, quia quod velit maiores fugit praesentium tenetur totam! Libero adipisci accusantium possimus assumenda!</p>
+            </div>
+        </div>
+        <div class="timeline-item1">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2018-2019</div>
+            <div class="timeline-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, magni neque? Eaque ratione doloremque nesciunt fugiat nemo, quia quod velit maiores fugit praesentium tenetur totam! Libero adipisci accusantium possimus assumenda!</p>
+            </div>
+        </div>
+        <div class="timeline-item2">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2018-2019</div>
+            <div class="timeline-content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, magni neque? Eaque ratione doloremque nesciunt fugiat nemo, quia quod velit maiores fugit praesentium tenetur totam! Libero adipisci accusantium possimus assumenda!</p>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="contact" id="contact">
+    <div class="contact-text">
+        <h2>Contact<span>Me</span></h2>
+        <h4>Let's work Together</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae porro ullam sint ratione, voluptatum dolore repellat. Voluptates, doloribus est beatae repudiandae, quos illo sint repellat ratione vero optio, eveniet quis.</p>
+        <div class="contact-list">
+            <li><i class="fa-brands fa-telegram"></i>contact@gmail.com</li>
+            <li><i class="fa-solid fa-phone"></i>0123456789</li>
+        </div>
+        <div class="contact-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </div>
+        <div class="contact-form">
+            <form action ="">
+                <input type = "" placeholder="Enter your Name" required>
+                <input type="email" placeholder="Enter your Email" required>
+
+                <input type="" placeholder="Enter your subject ">
+                <textarea name="" id=""  rows="10"  placeholder="Enter your Message"></textarea>
+                <input type="submit" value="submit" class="btn-box">
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+    <script>
+          var typed = new Typed( ".text",{    
+          typeSpeed: 100,
+          backSpeed: 100,
+          backDelay: 1000,
+          loop: true
+        });
+
+           
+          
+    </script>
+</body>
+</html>
